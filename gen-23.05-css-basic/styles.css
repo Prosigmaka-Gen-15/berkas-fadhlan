@@ -1,0 +1,145 @@
+/* Styling untuk body */
+body {
+  margin: 0 auto; /* Mengatur margin menjadi auto untuk membuat body berada di tengah */
+  text-align: center; /* Menengahkan isi body */
+}
+
+/* Styling untuk header */
+header {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Styling untuk daftar tautan navigasi */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling untuk setiap item tautan navigasi */
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Styling untuk tautan navigasi */
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  font-size: 24px;
+}
+
+/* Styling untuk gambar konten */
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding-top: 50px;
+}
+
+/* Styling untuk header */
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #f1f1f1; /* Menambahkan latar belakang warna abu-abu */
+}
+
+/* Styling untuk setiap tautan di .nav-links */
+.nav-links a {
+  margin-right: 10px;
+  padding: 5px 10px; /* Menyesuaikan padding untuk tautan */
+  border-radius: 4px; /* Menambahkan sudut melengkung pada latar belakang */
+  text-decoration: none;
+  color: #333;
+}
+
+/* Styling untuk paragraf */
+p {
+  font-size: 18;
+  font-family: Anonymous Pro;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+}
+
+/* Styling untuk card baju */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 960px; /* Lebar maksimum container */
+  margin: 0 auto; /* Agar container berada di tengah halaman */
+}
+
+.card {
+  flex: 0 0 calc(33.33% - 10px); /* Lebar card 33.33% dari container dengan jarak 10px */
+  margin-bottom: 20px; /* Jarak antara card */
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  background-color: #f1f1f1;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.footer-links li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.footer-links li a {
+  text-decoration: none;
+  color: #333;
+}
