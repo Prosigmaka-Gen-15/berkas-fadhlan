@@ -1,0 +1,208 @@
+body {
+    height: 100%;
+    font-family: 'Anonymous Pro';
+    display: flex;
+    flex-direction: column;
+}   
+
+/* bagian navbar (masuk,register) */
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #f1f1f1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+}
+
+.nav-links:hover{
+    background-color: seagreen;
+    transition: background-color 0.1s ease-in-out;
+    transition-delay: 0.1s;
+}
+
+.nav-links a {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    background-color: sa;
+}
+
+.nav-links a:hover{
+    color: white;
+    transition: color 0.1s ease-in-out;
+    transition-delay: 0.1s;
+    font-weight: bold;
+    transition: font-weight 0.1s ease-in;
+    transition-delay: 0.1s;
+}
+
+/* bagian header (beranda, belanja, galeri, promo) */
+header {
+    padding-top: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav ul li:hover {
+    background-color: seagreen;
+    transition: background-color 0.3s ease-in;
+    transition-delay: 0.2s;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: font-weight 0.2s ease-in;
+    transition-delay: 0.1s;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    font-size: 24px;
+}
+
+nav ul li a:hover{
+    color: white;
+    transition: color 0.3s ease-out;
+    transition-delay: 0.2s;
+}
+
+/* bagian gambar home */
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-top: 50px;
+}
+
+img:hover {
+    width: 55%;
+}
+
+/* bagian text */
+p {
+    font-size: 18px;
+    font-family: 'Anonymous Pro', sans-serif;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+
+/* bagian produk baju */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    margin: 0 auto;
+}
+
+.card {
+    flex: 0 0 calc(33.33% - 10px);
+    margin-bottom: 20px;
+    width: auto;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.card-img-top:hover {
+    height: 300px;
+    transition: height 0.2s ease-in-out;
+    transition-delay: 0.3s;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.card-text {
+    font-size: 18px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: seagreen;
+}
+
+
+/* bagian footer */
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.footer-content {
+    margin: 0 auto;
+}
+
+/* bagian css media query */
+@media only screen and (max-width: 768px) {
+    body {
+        margin: 0 auto;
+        text-align: center;
+        background-color:black;
+    }
+    .text-content {
+        color: white;
+    }
+    .card-text {
+        color: white;
+    }
+    .card-title{
+        color: white;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: silver;
+        padding: 10px 15px;
+        font-size: 24px;
+    }
+
+    .text-content{
+        overflow: auto;
+        background-color: white;
+        color: black;
+        height: 20px;
+    }
+    
+    
+}
