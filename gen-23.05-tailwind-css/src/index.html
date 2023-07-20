@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Tailwind CSS stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Tailwind CSS</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<style>
+    /* Custom styles for smaller screens */
+@media (max-width: 767px) {
+    .nav-links {
+        height: auto;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 8px 12px;
+        margin-bottom: 5px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .flex-space-x-2 {
+        flex-wrap: wrap;
+    }
+
+    .flex-space-x-2 > * {
+        flex: 1 1 45%;
+        margin-bottom: 10px;
+    }
+
+    .w-full {
+        width: 100%;
+    }
+}
+
+
+/* Tambahkan transisi saat gambar membesar */
+.img-zoom {
+    transition: transform 0.2s ease;
+}
+
+/* Efek zoom-in saat mouse di atas gambar */
+.img-zoom:hover {
+    transform: scale(1.1);
+}
+
+/* Ganti kursor menjadi pointer saat mouse di atas gambar */
+.img-zoom:hover {
+    cursor: pointer;
+}
+</style>
+
+<body class="min-h-screen flex flex-col">
+
+    <!-- Bagian Header dan Navbar -->
+    <div class="nav-links bg-gray-100 fixed top-0 left-0 w-full h-10 flex justify-end items-center">
+        <a href="#" class="px-4 py-1 rounded-md text-gray-700 hover:bg-seagreen hover:text-white transition duration-100">Keranjang</a>
+        <a href="#" class="px-4 py-1 rounded-md text-gray-700 hover:bg-seagreen hover:text-white transition duration-100">Register</a>
+        <a href="#" class="px-4 py-1 rounded-md text-gray-700 hover:bg-seagreen hover:text-white transition duration-100">Masuk</a>
+    </div>
+
+    <!-- Bagian Deskripsi Produk -->
+    <div class="flex justify-center mt-10 space-x-4">
+        <!-- Bagian Kiri-->
+        <div class="w-full lg:w-1/2 p-4">
+            <h2 class="text-xl font-bold mb-4">Produk Detail</h2>
+            <img src="images/depan.jpg" class="w-full mb-4 rounded-lg img-zoom">
+            <div class="flex space-x-2">
+                <img src="images/belakang.jpg" class="w-10 h-10 mb-4 rounded-lg img-zoom">
+                <img src="images/detail.jpg" class="w-10 h-10 mb-4 rounded-lg img-zoom">
+            </div>
+        </div>
+        
+
+        <!-- Bagian Kanan -->
+        <div class="w-full lg:w-1/2 p-4">
+            <h1 class="text-2xl font-bold mb-4">Tshirt MEET</h1>
+            <p class="text-gray-600 mb-4">
+                Short sleeve - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at ex eu nisl tincidunt elementum. Nulla facilisi.
+            </p>
+
+            <!-- Warna -->
+            <h2 class="text-xl font-bold mb-2">Warna</h2>
+            <div class="w-5 h-5 bg-blue-600 mb-2">
+            </div>
+
+            <!-- Harga -->
+            <h2 class="text-xl font-bold mb-2">Harga</h2>
+            <p class="text-gray-600 mb-4">Rp 160.000</p>
+
+            <!-- Ukuran -->
+            <h2 class="text-xl font-bold mb-2">Ukuran</h2>
+            <ul class="text-gray-600 flex-space-x-2">
+                <li>Size S: Width - 47, Length - 70</li>
+                <li>Size M: Width - 50, Length - 72</li>
+                <li>Size L: Width - 53, Length - 75</li>
+                <li>Size Xl: Width - 60, Length - 80</li>
+                <li>Size XXL: Width - 66, Length - 84</li>
+            </ul>
+
+            <div class="flex space-x-2 mb-4 flex-space-x-2">
+                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-gray-400 hover:text-gray-700 transition duration-100">S</button>
+                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-gray-400 hover:text-gray-700 transition duration-100">M</button>
+                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-gray-400 hover:text-gray-700 transition duration-100">L</button>
+                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-gray-400 hover:text-gray-700 transition duration-100">XL</button>
+                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-gray-400 hover:text-gray-700 transition duration-100">XXL</button>
+            </div>
+
+            <!-- Tambah -->
+            <button class="text-black px-4 py-2 rounded-md hover:bg-white hover:text-seagreen border border-seagreen transition duration-100 mr-2">
+                Add to Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
