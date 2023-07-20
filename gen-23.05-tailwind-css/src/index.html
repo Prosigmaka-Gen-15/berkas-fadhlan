@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Include Tailwind CSS stylesheet -->
+    <title>gen-23.05-tailwind-css</title>
+
+    <!-- import from lokal -->
+    <!-- <link href="/dist/output.css" rel="stylesheet"> -->
+
+    <!-- import dengan CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <title>Tailwind CSS</title>
-    <link href="styles.css" rel="stylesheet">
 </head>
 
 <style>
-    /* Custom styles for smaller screens */
+    /* Media Quary */
 @media (max-width: 767px) {
     .nav-links {
         height: auto;
@@ -105,15 +108,15 @@
             </ul>
 
             <div class="flex space-x-2 mb-4 flex-space-x-2">
-                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-gray-400 hover:text-gray-700 transition duration-100">S</button>
-                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-gray-400 hover:text-gray-700 transition duration-100">M</button>
-                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-gray-400 hover:text-gray-700 transition duration-100">L</button>
-                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-gray-400 hover:text-gray-700 transition duration-100">XL</button>
-                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-gray-400 hover:text-gray-700 transition duration-100">XXL</button>
+                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100">S</button>
+                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100">M</button>
+                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100">L</button>
+                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100">XL</button>
+                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100">XXL</button>
             </div>
 
             <!-- Tambah -->
-            <button class="text-black px-4 py-2 rounded-md hover:bg-white hover:text-seagreen border border-seagreen transition duration-100 mr-2">
+            <button class="text-black px-4 py-2 rounded-md hover:bg-black hover:text-white border border-black transition duration-100 mr-2">
                 Add to Cart
             </button>
 
