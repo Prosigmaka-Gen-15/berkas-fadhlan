@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'anonymous-pro': ['"Anonymous Pro"', 'monospace'],
+        'fira-mono': ['"Fira Mono"', 'monospace'],
+      },
+    },
   },
   plugins: [],
 }

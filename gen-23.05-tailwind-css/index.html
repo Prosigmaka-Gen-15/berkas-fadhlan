@@ -5,125 +5,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gen-23.05-tailwind-css</title>
-
+    
     <!-- import from lokal -->
     <link href="dist/output.css" rel="stylesheet">
-
-    <!-- import dengan CDN -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
+    
+    <!-- import goolge font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&family=Fira+Mono&display=swap');
+    </style>
+    
 </head>
 
-<style>
-    /* Media Quary */
-@media (max-width: 767px) {
-    .nav-links {
-        height: auto;
-    }
-
-    .nav-links a {
-        display: block;
-        padding: 8px 12px;
-        margin-bottom: 5px;
-        width: 100%;
-        text-align: center;
-    }
-
-    .flex-space-x-2 {
-        flex-wrap: wrap;
-    }
-
-    .flex-space-x-2 > * {
-        flex: 1 1 45%;
-        margin-bottom: 10px;
-    }
-
-    .w-full {
-        width: 100%;
-    }
-}
-
-
-/* Tambahkan transisi saat gambar membesar */
-.img-zoom {
-    transition: transform 0.2s ease;
-}
-
-/* Efek zoom-in saat mouse di atas gambar */
-.img-zoom:hover {
-    transform: scale(1.1);
-}
-
-/* Ganti kursor menjadi pointer saat mouse di atas gambar */
-.img-zoom:hover {
-    cursor: pointer;
-}
-</style>
-
-<body class="min-h-screen flex flex-col">
-
+<body class="flex flex-col min-h-screen items-center justify-between">
+    
     <!-- Bagian Header dan Navbar -->
     <div class="nav-links bg-gray-100 fixed top-0 left-0 w-full h-10 flex justify-end items-center">
-        <a href="#" class="px-4 py-1 rounded-md text-gray-700 hover:bg-seagreen hover:text-white transition duration-100">Keranjang</a>
-        <a href="#" class="px-4 py-1 rounded-md text-gray-700 hover:bg-seagreen hover:text-white transition duration-100">Register</a>
-        <a href="#" class="px-4 py-1 rounded-md text-gray-700 hover:bg-seagreen hover:text-white transition duration-100">Masuk</a>
+        <a href="#" class="font-fira-mono px-4 py-1 rounded-md text-gray-700 navbar-zoom">Keranjang</a>
+        <a href="#" class="font-fira-mono px-4 py-1 rounded-md text-gray-700 navbar-zoom">Register</a>
+        <a href="#" class="font-fira-mono px-4 py-1 rounded-md text-gray-700 navbar-zoom">Masuk</a>
     </div>
-
-    <!-- Bagian Deskripsi Produk -->
-    <div class="flex justify-center mt-10 space-x-4">
-        <!-- Bagian Kiri-->
-        <div class="w-full lg:w-1/2 p-4">
-            <h2 class="text-xl font-bold mb-4">Produk Detail</h2>
-            <img src="images/depan.jpg" class="w-full mb-4 rounded-lg img-zoom">
-            <div class="flex space-x-2">
-                <img src="images/belakang.jpg" class="w-10 h-10 mb-4 rounded-lg img-zoom">
-                <img src="images/detail.jpg" class="w-10 h-10 mb-4 rounded-lg img-zoom">
+    
+    <!-- Kontainer Utama -->
+    <div class="w-full px-4 md:w-4/5 mt-16 md:mt-10 md:flex md:justify-center mb-4">
+        
+        <!-- Sisi Kiri -->
+        <div class="w-full md:w-1/2 p-4 flex justify-center">
+            <div class="w-3/4">
+                <h2 class="text-xl font-bold mb-4 font-anonymous-pro">Produk Detail</h2>
+                <img src="images/depan.jpg" class="w-full mb-4 rounded-lg img-zoom">
+                <div class="flex flex-wrap space-x-2">
+                    <img src="images/depan.jpg" class="w-10 h-10 mb-4 rounded-lg img-zoom">
+                    <img src="images/belakang.jpg" class="w-10 h-10 mb-4 rounded-lg img-zoom">
+                    <img src="images/detail.jpg" class="w-10 h-10 mb-4 rounded-lg img-zoom">
+                    <img src="https://sellercenter.unkl-ns.com/gallery/items/753/img_753_i59_1_1688952831.jpg" class="w-10 h-10 mb-4 rounded-lg img-zoom">
+                    <img src="https://sellercenter.unkl-ns.com/gallery/items/753/img_753_i59_2_1688952834.jpg" class="w-10 h-10 mb-4 rounded-lg img-zoom">                    
+                </div>
             </div>
         </div>
         
-
-        <!-- Bagian Kanan -->
-        <div class="w-full lg:w-1/2 p-4">
-            <h1 class="text-2xl font-bold mb-4">Tshirt MEET</h1>
-            <p class="text-gray-600 mb-4">
-                Short sleeve - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at ex eu nisl tincidunt elementum. Nulla facilisi.
-            </p>
-
-            <!-- Warna -->
-            <h2 class="text-xl font-bold mb-2">Warna</h2>
-            <div class="w-5 h-5 bg-blue-600 mb-2">
+        <!-- Sisi Kanan -->
+        <div class="w-full md:w-1/2 p-2">
+            <div class="w-full">
+                <h1 class="text-2xl font-bold mb-4 font-anonymous-pro">Tshirt MEET</h1>
+                <p class="text-gray-600 mb-4 font-anonymous-pro">
+                    Shirt Sleeve - Sit esse labore officia ullamco eu aliqua aute eiusmod nisi cupidatat enim mollit tempor. Cillum sit mollit ut labore enim exercitation eiusmod nisi. Voluptate dolor commodo eiusmod aute nostrud ad sunt voluptate dolore amet dolore occaecat.
+                </p>
+                
+                <!-- Warna -->
+                <h2 class="text-xl font-bold mb-2 font-anonymous-pro">Warna</h2>
+                <div class="w-5 h-5 bg-blue-500 mb-2 img-zoom" style="background-color: #375DB0;"></div>
+                
+                <!-- Harga -->
+                <h2 class="text-xl font-bold mb-2 font-anonymous-pro">Harga</h2>
+                <p class="text-gray-600 mb-4 font-anonymous-pro">Rp 160.000</p>
+                
+                <!-- Ukuran -->
+                <h2 class="text-xl font-bold mb-2 font-anonymous-pro">Ukuran</h2>
+                <ul class="text-gray-600 font-anonymous-pro space-y-2 md:space-y-0 md:flex md:flex-wrap md:space-x-2">
+                    <li>Size S: Width - 47, Length - 70</li>
+                    <li>Size M: Width - 50, Length - 72</li>
+                    <li>Size L: Width - 53, Length - 75</li>
+                    <li>Size Xl: Width - 60, Length - 80</li>
+                    <li>Size XXL: Width - 66, Length - 84</li>
+                </ul>
+                
+                <!-- Button Size -->
+                <div class="flex space-x-2 mb-4 ">
+                    <button class="font-anonymous-pro bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100">S</button>
+                    <button class="font-anonymous-pro bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100">M</button>
+                    <button class="font-anonymous-pro bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100">L</button>
+                    <button class="font-anonymous-pro bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100">XL</button>
+                    <button class="font-anonymous-pro bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100">XXL</button>
+                </div>
+                
+                <!-- Button Tambah, Kurang, and Quantity -->
+                <div class="flex space-x-2 mb-4">
+                    <button class="font-anonymous-pro border border-black text-gray-600 px-4 py-2 rounded-md hover:text-white hover:bg-black hover:border-black transition duration-100">-</button>
+                    <button class="font-anonymous-pro border border-black text-gray-600 px-4 py-2 rounded-md hover:text-white hover:bg-black hover:border-black transition duration-100">0</button>
+                    <button class="font-anonymous-pro border border-black text-gray-600 px-4 py-2 rounded-md hover:text-white hover:bg-black hover:border-black transition duration-100">+</button>
+                </div>
+                
+                <!-- Tambah -->
+                <button class="font-anonymous-pro text-black px-4 py-2 rounded-md hover:bg-black hover:text-white border border-black transition duration-100 mr-2">
+                    Add to Cart
+                </button>
             </div>
-
-            <!-- Harga -->
-            <h2 class="text-xl font-bold mb-2">Harga</h2>
-            <p class="text-gray-600 mb-4">Rp 160.000</p>
-
-            <!-- Ukuran -->
-            <h2 class="text-xl font-bold mb-2">Ukuran</h2>
-            <ul class="text-gray-600 flex-space-x-2">
-                <li>Size S: Width - 47, Length - 70</li>
-                <li>Size M: Width - 50, Length - 72</li>
-                <li>Size L: Width - 53, Length - 75</li>
-                <li>Size Xl: Width - 60, Length - 80</li>
-                <li>Size XXL: Width - 66, Length - 84</li>
-            </ul>
-
-            <div class="flex space-x-2 mb-4 flex-space-x-2">
-                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100">S</button>
-                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100">M</button>
-                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100">L</button>
-                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100">XL</button>
-                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100">XXL</button>
-            </div>
-
-            <!-- Tambah -->
-            <button class="text-black px-4 py-2 rounded-md hover:bg-black hover:text-white border border-black transition duration-100 mr-2">
-                Add to Cart
-            </button>
-
         </div>
-
+        
     </div>
-
+    
+    <!-- Footer -->
+    <footer class="font-anonymous-pro footer w-full py-4 bg-gray-800 text-white text-center">
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+    </footer>
+    
 </body>
 
 </html>
