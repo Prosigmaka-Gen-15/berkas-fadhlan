@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gen-23.05-tailwind-css</title>
+    
+    <!-- import from lokal -->
+    <link href="dist/output.css" rel="stylesheet">
+    
+    <!-- import goolge font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&family=Fira+Mono&display=swap');
+    </style>
+    
+</head>
+
+<body class="body">
+    
+    <!-- Bagian Header dan Navbar -->
+    <div class="nav-links bg-gray-100 fixed top-0 left-0 w-full h-10 flex justify-end items-center">
+        <a href="#" class="navbar navbar-zoom">Keranjang</a>
+        <a href="#" class="navbar navbar-zoom">Register</a>
+        <a href="#" class="navbar navbar-zoom">Masuk</a>
+    </div>
+    
+    <!-- Kontainer Utama -->
+    <div class="container">
+        
+        <!-- Sisi Kiri -->
+        <div class="leftparent">
+            <div class="leftchild">
+                <h2 class="text-xl font-bold mb-4 font-anonymous-pro">Produk Detail</h2>
+                <img src="images/depan.jpg" class="w-full mb-4 rounded-lg img-zoom">
+                <div class="flex flex-wrap space-x-2">
+                    <img src="images/depan.jpg" class="img img-zoom">
+                    <img src="images/belakang.jpg" class="img img-zoom">
+                    <img src="images/detail.jpg" class="img img-zoom">
+                    <img src="https://sellercenter.unkl-ns.com/gallery/items/753/img_753_i59_1_1688952831.jpg" class="img img-zoom">
+                    <img src="https://sellercenter.unkl-ns.com/gallery/items/753/img_753_i59_2_1688952834.jpg" class="img img-zoom">                    
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sisi Kanan -->
+        <div class="rightparent">
+            <div class="rightchild">
+                <h1 class="text-2xl font-bold mb-4 font-anonymous-pro">Tshirt MEET</h1>
+                <p class="text-gray-600 mb-4 font-anonymous-pro">
+                    Shirt Sleeve - Sit esse labore officia ullamco eu aliqua aute eiusmod nisi cupidatat enim mollit tempor. Cillum sit mollit ut labore enim exercitation eiusmod nisi. Voluptate dolor commodo eiusmod aute nostrud ad sunt voluptate dolore amet dolore occaecat.
+                </p>
+                
+                <!-- Warna -->
+                <h2 class="h2-text">Warna</h2>
+                <div class="div-warna" style="background-color: #375DB0;"></div>
+                
+                <!-- Harga -->
+                <h2 class="h2-text">Harga</h2>
+                <p class="p-harga">Rp 160.000</p>
+                
+                <!-- Ukuran -->
+                <h2 class="h2-text">Ukuran</h2>
+                <ul class="p-ukuran">
+                    <li>Size S: Width - 47, Length - 70</li>
+                    <li>Size M: Width - 50, Length - 72</li>
+                    <li>Size L: Width - 53, Length - 75</li>
+                    <li>Size Xl: Width - 60, Length - 80</li>
+                    <li>Size XXL: Width - 66, Length - 84</li>
+                </ul>
+                
+                <!-- Button Size -->
+                <div class="div-button-size">
+                    <button class="button-size button-size-hover">S</button>
+                    <button class="button-size button-size-hover">M</button>
+                    <button class="button-size button-size-hover">L</button>
+                    <button class="button-size button-size-hover">XL</button>
+                    <button class="button-size button-size-hover">XXL</button>
+                </div>
+                
+                <!-- Button Tambah, Kurang, and Quantity -->
+                <div class="div-quantity">
+                    <button class="button-quantity button-quantity-hover">-</button>
+                    <button class="button-quantity button-quantity-hover">0</button>
+                    <button class="button-quantity button-quantity-hover">+</button>
+                </div>
+                
+                <!-- Tambah -->
+                <button class="button-tambah button-tambah-hover">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Footer -->
+    <footer class="font-anonymous-pro footer w-full py-4 bg-gray-800 text-white text-center">
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+    </footer>
+    
+</body>
+
+</html>
