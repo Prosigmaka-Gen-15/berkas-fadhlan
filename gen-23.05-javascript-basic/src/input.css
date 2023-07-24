@@ -48,7 +48,7 @@
 	}
 
 	.div-warna {
-		@apply w-5 h-5 bg-blue-500 mb-2 img-zoom;
+		@apply w-7 h-7 bg-blue-500 mb-2 img-zoom;
 	}
 
 	.p-harga {

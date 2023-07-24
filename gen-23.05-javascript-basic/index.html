@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gen-23.05-tailwind-css</title>
     
-    <!-- import from lokal -->
+    <!-- import css -->
     <link href="dist/output.css" rel="stylesheet">
     
     <!-- import goolge font -->
@@ -32,13 +32,13 @@
         <div class="leftparent">
             <div class="leftchild">
                 <h2 class="text-xl font-bold mb-4 font-anonymous-pro">Produk Detail</h2>
-                <img src="images/depan.jpg" class="w-full mb-4 rounded-lg img-zoom">
+                <img src="images/depan.jpg" class="w-full mb-4 rounded-lg img-zoom" onclick="gantiGambar()">
                 <div class="flex flex-wrap space-x-2">
-                    <img src="images/depan.jpg" class="img img-zoom">
-                    <img src="images/belakang.jpg" class="img img-zoom">
-                    <img src="images/detail.jpg" class="img img-zoom">
-                    <img src="https://sellercenter.unkl-ns.com/gallery/items/753/img_753_i59_1_1688952831.jpg" class="img img-zoom">
-                    <img src="https://sellercenter.unkl-ns.com/gallery/items/753/img_753_i59_2_1688952834.jpg" class="img img-zoom">                    
+                    <img src="images/depan.jpg" class="img img-zoom" onclick="gantiGambar('images/depan.jpg')">
+                    <img src="images/belakang.jpg" class="img img-zoom" onclick="gantiGambar('images/belakang.jpg')">
+                    <img src="images/detail.jpg" class="img img-zoom" onclick="gantiGambar('images/detail.jpg')">
+                    <img src="images/model_depan.jpg" class="img img-zoom" onclick="gantiGambar('images/model_depan.jpg')">
+                    <img src="images/model_belakang.jpg" class="img img-zoom" onclick="gantiGambar('images/model_belakang.jpg')">                    
                 </div>
             </div>
         </div>
@@ -98,6 +98,10 @@
     <footer class="font-anonymous-pro footer w-full py-4 bg-gray-800 text-white text-center">
         <p>&copy; 2023 Your Website. All rights reserved.</p>
     </footer>
+    
+
+    <!-- import javascript file -->
+    <script src="action.js"></script>
     
 </body>
 
