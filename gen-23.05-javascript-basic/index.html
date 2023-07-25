@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gen-23.05-tailwind-css</title>
+    <title>Tshirt MEET</title>
     
     <!-- import css -->
     <link href="dist/output.css" rel="stylesheet">
@@ -32,7 +32,7 @@
         <div class="leftparent">
             <div class="leftchild">
                 <h2 class="text-xl font-bold mb-4 font-anonymous-pro">Produk Detail</h2>
-                <img src="images/depan.jpg" class="w-full mb-4 rounded-lg img-zoom" onclick="gantiGambar()">
+                <img src="images/depan.jpg" class="w-full mb-4 rounded-lg img-zoom">
                 <div class="flex flex-wrap space-x-2">
                     <img src="images/depan.jpg" class="img img-zoom" onclick="gantiGambar('images/depan.jpg')">
                     <img src="images/belakang.jpg" class="img img-zoom" onclick="gantiGambar('images/belakang.jpg')">
@@ -80,29 +80,33 @@
                 
                 <!-- Button Tambah, Kurang, and Quantity -->
                 <div class="div-quantity">
-                    <button class="button-quantity button-quantity-hover">-</button>
-                    <button class="button-quantity button-quantity-hover">0</button>
-                    <button class="button-quantity button-quantity-hover">+</button>
+                    <div class="flex items-center border border-gray-200 rounded">
+                        <button type="button" class="button-quantity-minus">&minus;</button>
+                        
+                        <input type="button"  id="Quantity"  value="0" class="button-quantity-number"/>
+                        
+                        <button type="button" class="button-quantity-plus" >&plus;</button>
+                    </div>
                 </div>
-                
-                <!-- Tambah -->
-                <button class="button-tambah button-tambah-hover">
-                    Add to Cart
-                </button>
             </div>
+            
+            <!-- Tambah -->
+            <button class="button-add-to-cart button-add-to-cart-hover">
+                Tambah ke Keranjang
+            </button>
         </div>
-        
-    </div>
-    
-    <!-- Footer -->
-    <footer class="font-anonymous-pro footer w-full py-4 bg-gray-800 text-white text-center">
-        <p>&copy; 2023 Your Website. All rights reserved.</p>
-    </footer>
-    
+    </div> 
+</div>
 
-    <!-- import javascript file -->
-    <script src="action.js"></script>
-    
+<!-- Footer -->
+<footer class="font-anonymous-pro footer w-full py-4 bg-gray-800 text-white text-center">
+    <p>&copy; 2023 Your Website. All rights reserved.</p>
+</footer>
+
+
+<!-- import javascript file -->
+<script src="action.js"></script>
+
 </body>
 
 </html>

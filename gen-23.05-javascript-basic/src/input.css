@@ -69,27 +69,45 @@
 
 	.button-size-hover {
 		@apply hover:bg-black hover:text-white transition duration-100;
-	}	
+	}
+
+	.button-size-active {
+		@apply bg-black text-white;
+	}
 
 	.div-quantity {
 		@apply flex space-x-2 mb-4;
 	}
 
-	.button-quantity {
-		@apply font-anonymous-pro border border-black text-gray-600 px-4 py-2 rounded-md;
+	.button-quantity-minus {
+		@apply w-10 h-10 leading-10 text-gray-600 transition hover:opacity-75;
 	}
 
-	.button-quantity-hover {
-		@apply hover:text-white hover:bg-black hover:border-black transition duration-100;
+	.button-quantity-plus {
+		@apply w-10 h-10 leading-10 text-gray-600 transition hover:opacity-75;
 	}
 
-	.button-tambah {
+	.button-quantity-number {
+		@apply h-10 w-16 border-transparent text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none;
+	}
+
+	.button-add-to-cart {
 		@apply font-anonymous-pro text-black px-4 py-2 rounded-md;
 	}
 
-	.button-tambah-hover {
+	.button-add-to-cart-hover {
 		@apply hover:bg-black hover:text-white border border-black transition duration-100 mr-2
 	}
+
+	.no-spinner {
+		-moz-appearance: textfield;
+	  }
+  
+	  .no-spinner::-webkit-outer-spin-button,
+	  .no-spinner::-webkit-inner-spin-button {
+		margin: 0;
+		-webkit-appearance: none;
+	  }
 
 
 }
