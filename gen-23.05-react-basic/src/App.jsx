@@ -11,6 +11,9 @@ export default function App() {
     setFrontImage(sumberGambar);
   }
 
+  // List gambar baju
+  const imageSources = ['images/depan.jpg', 'images/belakang.jpg', 'images/detail.jpg', 'images/model_depan.jpg', 'images/model_belakang.jpg'];
+
   // List ukuran
   const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
 
@@ -43,36 +46,15 @@ export default function App() {
               alt='Product'
             />
             <div className='flex flex-wrap space-x-2'>
-              <img
-                src='images/depan.jpg'
-                onClick={() => gantiGambar('images/depan.jpg')}
-                className='w-10 h-10 mb-4 rounded-lg cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
-                alt='Product'
-              />
-              <img
-                src='images/belakang.jpg'
-                onClick={() => gantiGambar('images/belakang.jpg')}
-                className='w-10 h-10 mb-4 rounded-lg cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
-                alt='Product'
-              />
-              <img
-                src='images/detail.jpg'
-                onClick={() => gantiGambar('images/detail.jpg')}
-                className='w-10 h-10 mb-4 rounded-lg cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
-                alt='Product'
-              />
-              <img
-                src='images/model_depan.jpg'
-                onClick={() => gantiGambar('images/model_depan.jpg')}
-                className='w-10 h-10 mb-4 rounded-lg cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
-                alt='Product'
-              />
-              <img
-                src='images/model_belakang.jpg'
-                onClick={() => gantiGambar('images/model_belakang.jpg')}
-                className='w-10 h-10 mb-4 rounded-lg cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
-                alt='Product'
-              />
+              {imageSources.map((source) => (
+                <img
+                  key={source}
+                  src={source}
+                  onClick={() => gantiGambar(source)}
+                  className='w-10 h-10 mb-4 rounded-lg cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
+                  alt='Product'
+                />
+              ))}
             </div>
           </div>
         </div>
