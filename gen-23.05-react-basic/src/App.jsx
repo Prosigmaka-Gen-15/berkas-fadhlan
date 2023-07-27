@@ -11,6 +11,9 @@ export default function App() {
     setFrontImage(sumberGambar);
   }
 
+  // List ukuran
+  const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+
   // Fungsi untuk tombol ukuran
   function handleSizeClick(size) {
     setActiveSize((prevSize) => (prevSize === size ? null : size));
@@ -106,46 +109,17 @@ export default function App() {
 
             {/* Tombol Ukuran */}
             <div className='flex space-x-2 mb-4'>
-              <button
-                onClick={() => handleSizeClick('S')}
-                className={`${
-                  activeSize === 'S' ? 'bg-black text-white' : 'bg-gray-300 text-gray-600'
-                } px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100`}
-              >
-                S
-              </button>
-              <button
-                onClick={() => handleSizeClick('M')}
-                className={`${
-                  activeSize === 'M' ? 'bg-black text-white' : 'bg-gray-300 text-gray-600'
-                } px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100`}
-              >
-                M
-              </button>
-              <button
-                onClick={() => handleSizeClick('L')}
-                className={`${
-                  activeSize === 'L' ? 'bg-black text-white' : 'bg-gray-300 text-gray-600'
-                } px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100`}
-              >
-                L
-              </button>
-              <button
-                onClick={() => handleSizeClick('XL')}
-                className={`${
-                  activeSize === 'XL' ? 'bg-black text-white' : 'bg-gray-300 text-gray-600'
-                } px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100`}
-              >
-                XL
-              </button>
-              <button
-                onClick={() => handleSizeClick('XXL')}
-                className={`${
-                  activeSize === 'XXL' ? 'bg-black text-white' : 'bg-gray-300 text-gray-600'
-                } px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100`}
-              >
-                XXL
-              </button>
+              {sizes.map((size) => (
+                <button
+                  key={size}
+                  onClick={() => handleSizeClick(size)}
+                  className={`${
+                    activeSize === size ? 'bg-black text-white' : 'bg-gray-300 text-gray-600'
+                  } px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100`}
+                >
+                  {size}
+                </button>
+              ))}
             </div>
 
             {/* Tombol quantity */}
