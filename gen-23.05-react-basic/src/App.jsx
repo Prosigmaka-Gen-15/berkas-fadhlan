@@ -22,6 +22,24 @@ export default function App() {
     setActiveSize((prevSize) => (prevSize === size ? null : size));
   }
 
+  // Fungsi untuk mendapatkan data ukuran berdasarkan ukuran yang dipilih
+  function getUkuran(size) {
+    switch (size) {
+      case 'S':
+        return { width: '47', length: '70' };
+      case 'M':
+        return { width: '50', length: '72' };
+      case 'L':
+        return { width: '53', length: '75' };
+      case 'XL':
+        return { width: '60', length: '80' };
+      case 'XXL':
+        return { width: '66', length: '84' };
+      default:
+        return { width: '', length: '' };
+    }
+  }
+
   return (
     <>
       {/* navbar */}
@@ -83,11 +101,11 @@ export default function App() {
 
             {/* Bagian Ukuran */}
             <h2 className='text-xl font-bold mb-2'>Ukuran</h2>
-            <p className='text-gray-600 mb-4'>Size S: Width - 47, Length - 70</p>
-            <p className='text-gray-600 mb-4'>Size M: Width - 50, Length - 72</p>
-            <p className='text-gray-600 mb-4'>Size L: Width - 53, Length - 75</p>
-            <p className='text-gray-600 mb-4'>Size Xl: Width - 60, Length - 80</p>
-            <p className='text-gray-600 mb-4'>Size XXL: Width - 66, Length - 84</p>
+            {sizes.map((size) => (
+              <p key={size} className='text-gray-600 mb-4'>
+                {`Size ${size}: Width - ${getUkuran(size).width}, Length - ${getUkuran(size).length}`}
+              </p>
+            ))}
 
             {/* Tombol Ukuran */}
             <div className='flex space-x-2 mb-4'>
