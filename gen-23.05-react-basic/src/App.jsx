@@ -1,147 +1,50 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Header from './components/Header';
+import Menu from './components/Menu';
+import Produk from './components/Produk';
+import Footer from './components/Footer';
 
 export default function App() {
-  // State untuk mengelola gambar depan produk
-  const [frontImage, setFrontImage] = useState('images/depan.jpg');
-  // State untuk mengelola tombol ukuran
-  const [activeSize, setActiveSize] = useState('');
+  const menuItems = [
+    { text: 'T-Shirt', link: '/Tshirt' },
+    { text: 'Shirt', link: '/Shirt' },
+    { text: 'Jacket', link: '/Jacket' },
+    { text: 'Hoodie', link: '/Hoodie' },
+  ];
 
-  // Fungsi untuk mengganti gambar depan produk
-  function gantiGambar(sumberGambar) {
-    setFrontImage(sumberGambar);
-  }
-
-  // List gambar baju
-  const imageSources = ['images/depan.jpg', 'images/belakang.jpg', 'images/detail.jpg', 'images/model_depan.jpg', 'images/model_belakang.jpg'];
-
-  // List ukuran
-  const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
-
-  // Fungsi untuk tombol ukuran
-  function handleSizeClick(size) {
-    setActiveSize((prevSize) => (prevSize === size ? null : size));
-  }
-
-  // Fungsi untuk mendapatkan data ukuran berdasarkan ukuran yang dipilih
-  function getUkuran(size) {
-    switch (size) {
-      case 'S':
-        return { width: '47', length: '70' };
-      case 'M':
-        return { width: '50', length: '72' };
-      case 'L':
-        return { width: '53', length: '75' };
-      case 'XL':
-        return { width: '60', length: '80' };
-      case 'XXL':
-        return { width: '66', length: '84' };
-      default:
-        return { width: '', length: '' };
-    }
-  }
+  const products = [
+    { text: 'T-Shirt CSTL', image: '/images/cstl.jpg', price: 'Rp 78.000' },
+    { text: 'T-Shirt FLGG', image: '/images/flgg.jpg', price: 'Rp 78.000' },
+    { text: 'T-Shirt KAAP', image: '/images/kaap.jpg', price: 'Rp 115.000' },
+    { text: 'T-Shirt MEET', image: '/images/meet.jpg', price: 'Rp 78.000' },
+    { text: 'T-Shirt MODU', image: '/images/modu.jpg', price: 'Rp 158.500' },
+    { text: 'T-Shirt WWOD', image: '/images/wwod.jpg', price: 'Rp 149.000' },
+    { text: 'T-Shirt YOTT', image: '/images/yott.jpg', price: 'Rp 158.500' },
+  ];
 
   return (
     <>
-      {/* navbar */}
-      <div className='nav-links bg-gray-100 gap-x-2 fixed top-0 w-full h-10 flex justify-end items-center'>
-        <a href='#' className='px-4 py-1 rounded-md text-gray-700 hover:text-white transition duration-100 hover:bg-black duration-200 ease-in'>
-          Register
-        </a>
-        <a href='#' className='px-4 py-1 rounded-md text-gray-700 hover:text-white transition duration-100 hover:bg-black duration-200 ease-in'>
-          Masuk
-        </a>
+      {/* header */}
+      <Header registerText='Daftar' loginText='Masuk' />
+
+      {/* Menu */}
+      <Menu menuItems={menuItems} />
+
+      {/* banner */}
+      <div className='flex flex-wrap justify-center'>
+        <img src='/images/HOME.jpg' className='ml-auto mr-auto pt-0.5 w-1/2 hover:scale-110 transition-transform duration-200 ease-in-out'></img>
+        <p className='text-lg p-12'>
+          Tempor consectetur exercitation ullamco cillum sunt quis irure mollit laborum consequat sunt fugiat. Adipisicing consequat est adipisicing
+          exercitation qui mollit occaecat quis minim enim nostrud. Cupidatat occaecat duis pariatur enim ad sit nisi dolore in voluptate nulla. Aute
+          esse eu exercitation aute voluptate ipsum do.
+        </p>
       </div>
 
-      {/* konten */}
-      <div className='w-full px-4 md:w-4/5 mt-16 md:mt-10 md:flex md:justify-center mb-4'>
-        {/* Bagian kiri */}
-        <div className='w-full md:w-1/2 p-4 flex justify-center'>
-          <div className='w-3/4'>
-            <h2 className='text-xl font-bold mb-4'>Produk Detail</h2>
-            <img
-              src={frontImage}
-              className='w-full mb-4 rounded-lg cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
-              alt='Product'
-            />
-            <div className='flex flex-wrap space-x-2'>
-              {imageSources.map((source) => (
-                <img
-                  key={source}
-                  src={source}
-                  onClick={() => gantiGambar(source)}
-                  className='w-10 h-10 mb-4 rounded-lg cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
-                  alt='Product'
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+      {/* produk */}
+      <Produk products={products} />
 
-        {/* Bagian kanan */}
-        <div className='w-full md:w-1/2 p-2'>
-          <div className='w-full'>
-            <h1 className='text-2xl font-bold mb-4'>T-Shirt Meet</h1>
-            <p className='text-gray-600 mb-4'>
-              T-Shirt Meet - Qui laboris sint adipisicing quis qui ullamco Lorem quis ipsum dolore ut sunt ipsum. Nisi sunt incididunt reprehenderit
-              laborum laboris do nisi enim irure non commodo proident laborum non. Consectetur enim pariatur labore id quis officia irure laborum sunt
-              cillum. Labore ex dolor qui non officia aute cupidatat ad ullamco. Quis culpa incididunt cillum eiusmod pariatur nisi minim nostrud.
-              Dolor sint quis eu ea. Ullamco Lorem officia commodo commodo.
-            </p>
-
-            {/* Bagian Warna */}
-            <h2 className='text-xl font-bold mb-2'>Warna</h2>
-            <div
-              className='w-7 h-7 bg-blue-500 mb-2 cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
-              style={{ backgroundColor: '#375DB0' }}
-            ></div>
-
-            {/* Bagian Harga */}
-            <h2 className='text-xl font-bold mb-2'>Harga</h2>
-            <p className='text-gray-600 mb-4'>Rp 160.000</p>
-
-            {/* Bagian Ukuran */}
-            <h2 className='text-xl font-bold mb-2'>Ukuran</h2>
-            {sizes.map((size) => (
-              <p key={size} className='text-gray-600 mb-4'>
-                {`Size ${size}: Width - ${getUkuran(size).width}, Length - ${getUkuran(size).length}`}
-              </p>
-            ))}
-
-            {/* Tombol Ukuran */}
-            <div className='flex space-x-2 mb-4'>
-              {sizes.map((size) => (
-                <button
-                  key={size}
-                  onClick={() => handleSizeClick(size)}
-                  className={`${
-                    activeSize === size ? 'bg-black text-white' : 'bg-gray-300 text-gray-600'
-                  } px-4 py-2 rounded-md hover:bg-black hover:text-white transition duration-100`}
-                >
-                  {size}
-                </button>
-              ))}
-            </div>
-
-            {/* Tombol quantity */}
-            <div className='flex space-x-2 mb-4'>
-              <div className='flex items-center border border-gray-200 rounded'>
-                <button type='button' className='w-10 h-10 leading-10 text-gray-600 transition hover:opacity-75'>
-                  &minus;
-                </button>
-                <input type='button' id='Quantity' value='0' class='h-10 w-16 border-transparent text-center' />
-                <button type='button' className='w-10 h-10 leading-10 text-gray-600 transition hover:opacity-75'>
-                  +
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Button Tambah Keranjang */}
-          <button class='text-black px-4 py-2 rounded-md hover:bg-black hover:text-white border border-black transition duration-100 mr-2'>
-            Tambah ke Keranjang
-          </button>
-        </div>
-      </div>
+      {/* footer */}
+      <Footer />
     </>
   );
 }
