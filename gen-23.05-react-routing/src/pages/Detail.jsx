@@ -107,11 +107,11 @@ export default function Detail() {
             </p>
 
             {/* Bagian Warna */}
-            <h2 className='text-xl font-bold mb-2'>Warna</h2>
+            {/* <h2 className='text-xl font-bold mb-2'>Warna</h2>
             <div
               className='w-7 h-7 bg-blue-500 mb-2 cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
               style={{ backgroundColor: '#375DB0' }}
-            ></div>
+            ></div> */}
 
             {/* Bagian Harga */}
             <h2 className='text-xl font-bold mb-2'>Harga</h2>

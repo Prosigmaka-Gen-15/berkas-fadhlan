@@ -4,7 +4,6 @@ export default function ProductItem({ text, image, price }) {
   const navigate = useNavigate();
 
   const handleDetail = () => {
-    console.log({ text });
     navigate(`/${text}`);
   };
 
