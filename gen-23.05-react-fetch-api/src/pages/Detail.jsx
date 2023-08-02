@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import ProductDetail from '../components/ProductDetail';
 import { Outlet, useParams } from 'react-router-dom';
 
-export default function Detail() {
+export default function Detail(props) {
+  const [products, setProducts] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [frontImage, setFrontImage] = useState('images/MEET.jpg');
   const [activeSize, setActiveSize] = useState('');
   const [quantity, setQuantity] = useState(0);
-
-  function gantiGambar(sumberGambar) {
-    setFrontImage(sumberGambar);
-  }
 
   const imageSources = [
     'images/MEET.jpg',
@@ -32,6 +31,23 @@ export default function Detail() {
   ];
 
   const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+
+  const getProducts = async () => {
+    try {
+      let response = await axios.get('http://localhost:3001/products');
+      setProducts(response.data);
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  function gantiGambar(sumberGambar) {
+    setFrontImage(sumberGambar);
+  }
 
   function handleSizeClick(size) {
     setActiveSize((prevSize) => (prevSize === size ? null : size));
@@ -54,22 +70,8 @@ export default function Detail() {
     }
   }
 
-  function handleSizeClick(size) {
-    if (activeSize === size) {
-      setQuantity((prevQuantity) => prevQuantity + 1);
-    } else {
-      const isConfirmed = window.confirm('Apakah Anda ingin mengganti ukuran?');
-      if (isConfirmed) {
-        setQuantity(1);
-        setActiveSize(size);
-        setLastSelectedSize(size);
-      }
-    }
-  }
-
   function tambahKeKeranjang() {
     setQuantity(0);
-
     alert('Berhasil menambahkan ke keranjang!');
   }
 
@@ -83,39 +85,35 @@ export default function Detail() {
 
   const { text } = useParams();
 
+  useEffect(() => {
+    const selectedProduct = products.find((product) => product.text === text);
+    setSelectedProduct(selectedProduct);
+  }, [products, text]);
+
+  if (!selectedProduct) {
+    // Jika produk yang dipilih tidak ditemukan, kembalikan nilai null atau tampilkan pesan loading.
+    return null;
+  }
+
   return (
     <>
       {/* header */}
       <Header registerText='Daftar' loginText='Masuk' />
-
       {/* Nested Route */}
       <Outlet />
 
-      {/* deskripsi produk */}
       <div className='flex flex-col md:flex-row'>
-        <ProductDetail frontImage={frontImage} imageSources={imageSources} gantiGambar={gantiGambar} />
+        <ProductDetail frontImage={selectedProduct.image} imageSources={imageSources} gantiGambar={gantiGambar} />
 
         {/* Penjelasan Produk */}
         <div className='w-full md:w-1/2'>
           <div className='mx-6'>
-            <h1 className='text-2xl font-bold mb-4 md:pt-16'>{text}</h1>
-            <p className='text-gray-600 mb-4'>
-              T-Shirt Meet - Qui laboris sint adipisicing quis qui ullamco Lorem quis ipsum dolore ut sunt ipsum. Nisi sunt incididunt reprehenderit
-              laborum laboris do nisi enim irure non commodo proident laborum non. Consectetur enim pariatur labore id quis officia irure laborum sunt
-              cillum. Labore ex dolor qui non officia aute cupidatat ad ullamco. Quis culpa incididunt cillum eiusmod pariatur nisi minim nostrud.
-              Dolor sint quis eu ea. Ullamco Lorem officia commodo commodo.
-            </p>
-
-            {/* Bagian Warna */}
-            {/* <h2 className='text-xl font-bold mb-2'>Warna</h2>
-            <div
-              className='w-7 h-7 bg-blue-500 mb-2 cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
-              style={{ backgroundColor: '#375DB0' }}
-            ></div> */}
+            <h1 className='text-2xl font-bold mb-4 md:pt-16'>{selectedProduct.text}</h1>
+            <p className='text-gray-600 mb-4'>{selectedProduct.description}</p>
 
             {/* Bagian Harga */}
             <h2 className='text-xl font-bold mb-2'>Harga</h2>
-            <p className='text-gray-600 mb-4'>Rp 78.000</p>
+            <p className='text-gray-600 mb-4'>Rp {selectedProduct.price}</p>
 
             {/* Bagian Ukuran */}
             <h2 className='text-xl font-bold mb-2'>Ukuran</h2>
@@ -167,7 +165,6 @@ export default function Detail() {
         </div>
         {/* batas detail */}
       </div>
-
       {/* footer */}
       <Footer />
     </>
