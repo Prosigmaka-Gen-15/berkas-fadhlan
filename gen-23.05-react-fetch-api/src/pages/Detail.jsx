@@ -31,6 +31,19 @@ export default function Detail(props) {
     setActiveSize((prevSize) => (prevSize === size ? null : size));
   }
 
+  function handleSizeClick(size) {
+    if (activeSize === size) {
+      setQuantity((prevQuantity) => prevQuantity + 1);
+    } else {
+      const isConfirmed = window.confirm('Apakah Anda ingin mengganti ukuran?');
+      if (isConfirmed) {
+        setQuantity(1);
+        setActiveSize(size);
+        setLastSelectedSize(size);
+      }
+    }
+  }
+
   function getUkuran(size) {
     switch (size) {
       case 'S':
