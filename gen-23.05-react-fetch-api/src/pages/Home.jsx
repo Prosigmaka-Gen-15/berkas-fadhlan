@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import Menu from '../components/Menu';
 import Product from '../components/Product';
 
-export default function Home() {
+export default function Home(props) {
   const menuItems = [
     { text: 'T-Shirt', link: '/' },
     { text: 'Shirt', link: '/' },
