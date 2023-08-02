@@ -7,28 +7,10 @@ import { Outlet, useParams } from 'react-router-dom';
 
 export default function Detail(props) {
   const [products, setProducts] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [frontImage, setFrontImage] = useState('images/MEET.jpg');
+  const [selectedProduct, setSelectedProduct] = useState({});
+  const [frontImage, setFrontImage] = useState('');
   const [activeSize, setActiveSize] = useState('');
   const [quantity, setQuantity] = useState(0);
-
-  const imageSources = [
-    'images/MEET.jpg',
-    'images/MEET_BACK.jpg',
-    'images/MEET_DETAIL.jpg',
-    'images/CSTL.jpg',
-    'images/CSTL_BACK.jpg',
-    'images/FLGG.jpg',
-    'images/FLGG_BACK.jpg',
-    'images/KAAP.jpg',
-    'images/KAAP_BACK.jpg',
-    'images/MODU.jpg',
-    'images/MODU_BACK.jpg',
-    'images/WWOD.jpg',
-    'images/WWOD_BACK.jpg',
-    'images/YOTT.jpg',
-    'images/YOTT_BACK.jpg',
-  ];
 
   const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
 
@@ -44,10 +26,6 @@ export default function Detail(props) {
   useEffect(() => {
     getProducts();
   }, []);
-
-  function gantiGambar(sumberGambar) {
-    setFrontImage(sumberGambar);
-  }
 
   function handleSizeClick(size) {
     setActiveSize((prevSize) => (prevSize === size ? null : size));
@@ -95,6 +73,9 @@ export default function Detail(props) {
     return null;
   }
 
+  // Menggabungkan selectedProduct.image dan selectedProduct.image_back menjadi satu array
+  const imageSources = [selectedProduct.image, selectedProduct.image_back];
+
   return (
     <>
       {/* header */}
@@ -103,13 +84,19 @@ export default function Detail(props) {
       <Outlet />
 
       <div className='flex flex-col md:flex-row'>
-        <ProductDetail frontImage={selectedProduct.image} imageSources={imageSources} gantiGambar={gantiGambar} />
+        <ProductDetail frontImage={selectedProduct.image} imageSources={imageSources} gantiGambar={setFrontImage} />
 
         {/* Penjelasan Produk */}
         <div className='w-full md:w-1/2'>
           <div className='mx-6'>
             <h1 className='text-2xl font-bold mb-4 md:pt-16'>{selectedProduct.text}</h1>
             <p className='text-gray-600 mb-4'>{selectedProduct.description}</p>
+
+            {/* Bagian Warna */}
+            <div
+              className='w-7 h-7 bg-blue-500 mb-2 cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
+              style={{ backgroundColor: `${selectedProduct.color}` }}
+            ></div>
 
             {/* Bagian Harga */}
             <h2 className='text-xl font-bold mb-2'>Harga</h2>
