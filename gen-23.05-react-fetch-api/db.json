@@ -1,0 +1,53 @@
+{
+  "products": [
+      {
+          "id": 1,
+          "text": "CSTL",
+          "price": 78.000,
+          "image": "/images/CSTL.jpg",
+          "category": "Tshirt"
+      },
+      {
+          "id": 2,
+          "text": "FLGG",
+          "price": 78.000,
+          "image": "/images/FLGG.jpg",
+          "category": "Tshirt"
+      },
+      {
+          "id": 3,
+          "text": "KAAP",
+          "price": 115.000,
+          "image": "/images/KAAP.jpg",
+          "category": "Shirt"
+      },
+      {
+          "id": 4,
+          "text": "MEET",
+          "price": 78.000,
+          "image": "/images/MEET.jpg",
+          "category": "Tshirt"
+      },
+      {
+          "id": 5,
+          "text": "MODU",
+          "price": 158.500,
+          "image": "/images/MODU.jpg",
+          "category": "Hoodie"
+      },
+      {
+          "id": 6,
+          "text": "WWOD",
+          "price": 149.000,
+          "image": "/images/WWOD.jpg",
+          "category": "Jacket"
+      },
+      {
+          "id": 7,
+          "text": "YOTT",
+          "price": 158.500,
+          "image": "/images/YOTT.jpg",
+          "category": "Hoodie"
+      }
+  ]
+}
