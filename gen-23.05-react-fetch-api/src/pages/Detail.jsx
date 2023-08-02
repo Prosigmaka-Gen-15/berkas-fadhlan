@@ -3,12 +3,12 @@ import axios from 'axios';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import ProductDetail from '../components/ProductDetail';
-import { Outlet, useParams } from 'react-router-dom';
+import { Outlet, useParams, useLocation } from 'react-router-dom';
 
 export default function Detail(props) {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState({});
-  const [frontImage, setFrontImage] = useState('');
+  const [frontImage, setFrontImage] = useState(''); // Gambar utama produk yang akan ditampilkan
   const [activeSize, setActiveSize] = useState('');
   const [quantity, setQuantity] = useState(0);
 
@@ -63,18 +63,40 @@ export default function Detail(props) {
 
   const { text } = useParams();
 
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const selectedImage = queryParams.get('image');
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   useEffect(() => {
     const selectedProduct = products.find((product) => product.text === text);
     setSelectedProduct(selectedProduct);
-  }, [products, text]);
+
+    // Gunakan useEffect untuk mengatur frontImage ketika komponen pertama kali dimuat.
+    if (selectedImage) {
+      // Jika ada selectedImage dari URL (gambar yang diklik), gunakan nilai itu.
+      setFrontImage(selectedImage);
+    } else if (selectedProduct) {
+      // Jika tidak ada selectedImage, gunakan selectedProduct.image.
+      setFrontImage(selectedProduct.image);
+    }
+  }, [products, text, selectedImage]);
+
+  // Fungsi untuk mengganti gambar frontImage dengan gambar yang di klik
+  const changeFrontImage = (imageUrl) => {
+    setFrontImage(imageUrl);
+  };
+
+  // Menggabungkan selectedProduct.image dan selectedProduct.image_back menjadi satu array
+  const imageSources = selectedProduct ? [selectedProduct.image, selectedProduct.image_back] : [];
 
   if (!selectedProduct) {
     // Jika produk yang dipilih tidak ditemukan, kembalikan nilai null atau tampilkan pesan loading.
     return null;
   }
-
-  // Menggabungkan selectedProduct.image dan selectedProduct.image_back menjadi satu array
-  const imageSources = [selectedProduct.image, selectedProduct.image_back];
 
   return (
     <>
@@ -84,7 +106,7 @@ export default function Detail(props) {
       <Outlet />
 
       <div className='flex flex-col md:flex-row'>
-        <ProductDetail frontImage={selectedProduct.image} imageSources={imageSources} gantiGambar={setFrontImage} />
+        <ProductDetail frontImage={frontImage} imageSources={imageSources} gantiGambar={changeFrontImage} />
 
         {/* Penjelasan Produk */}
         <div className='w-full md:w-1/2'>

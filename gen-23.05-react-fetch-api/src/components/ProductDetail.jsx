@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 
 export default function ProductDetail({ frontImage, imageSources, gantiGambar }) {
   return (
-    <div className=' w-full md:w-1/2 mt-16 md:mt-10 md:flex md:justify-center'>
+    <div className='w-full md:w-1/2 mt-16 md:mt-10 md:flex md:justify-center'>
       {/* Bagian kiri */}
       <div className='w-full flex justify-center'>
         <div className='w-3/4'>
