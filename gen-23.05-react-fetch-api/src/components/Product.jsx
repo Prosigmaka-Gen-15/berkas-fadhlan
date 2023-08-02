@@ -47,7 +47,7 @@ export default function Product(props) {
             >
               {product.text}
             </Link>
-            <p className='text-lg mb-2'>{product.price}</p>
+            <p className='text-lg mb-2'>Rp.{product.price}</p>
             <button
               className='text-black px-2 py-1 rounded-md hover:bg-black hover:text-white border border-black transition duration-100 mr-2'
               onClick={() => handleDetail(product)}
