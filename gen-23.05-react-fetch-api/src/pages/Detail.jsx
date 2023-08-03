@@ -128,6 +128,7 @@ export default function Detail(props) {
             <p className='text-gray-600 mb-4'>{selectedProduct.description}</p>
 
             {/* Bagian Warna */}
+            <h2 className='text-xl font-bold mb-2'>Warna</h2>
             <div
               className='w-7 h-7 bg-blue-500 mb-2 cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
               style={{ backgroundColor: `${selectedProduct.color}` }}
