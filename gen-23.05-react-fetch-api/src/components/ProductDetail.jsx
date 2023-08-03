@@ -18,7 +18,7 @@ export default function ProductDetail({ frontImage, imageSources, gantiGambar })
                 key={source}
                 src={source}
                 onClick={() => gantiGambar(source)}
-                className='w-10 h-10 mb-4 rounded-lg cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
+                className='w-10 h-10 mb-4 rounded-lg cursor-pointer hover:scale-125 transition-transform duration-200 ease-in-out'
                 alt='Product'
               />
             ))}

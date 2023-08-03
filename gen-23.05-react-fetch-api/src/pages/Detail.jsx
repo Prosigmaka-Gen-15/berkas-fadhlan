@@ -6,27 +6,46 @@ import ProductDetail from '../components/ProductDetail';
 import { Outlet, useParams, useLocation } from 'react-router-dom';
 
 export default function Detail(props) {
+  // State untuk menyimpan data produk, produk terpilih, gambar depan, ukuran aktif, jumlah, dan status loading
   const [products, setProducts] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState({});
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [frontImage, setFrontImage] = useState('');
   const [activeSize, setActiveSize] = useState('');
   const [quantity, setQuantity] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  const [sizes, setSizes] = useState([]);
 
-  const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
-
+  // Fungsi untuk mengambil data produk dari server
   const getProducts = async () => {
     try {
       let response = await axios.get('http://localhost:3001/products');
       setProducts(response.data);
+      setIsLoading(false);
     } catch (e) {
       console.log(e.message);
     }
   };
 
   useEffect(() => {
+    // Panggil fungsi getProducts saat komponen di-mount
     getProducts();
   }, []);
 
+  // Fungsi untuk mendapatkan informasi ukuran berdasarkan ukuran yang dipilih
+  function getUkuran(size) {
+    if (!selectedProduct || !selectedProduct.sizes) {
+      return { width: '', length: '' };
+    }
+
+    const sizeInfo = selectedProduct.sizes.find((s) => s.size === size);
+    if (sizeInfo) {
+      return { width: sizeInfo.width, length: sizeInfo.length };
+    } else {
+      return { width: '', length: '' };
+    }
+  }
+
+  // Fungsi untuk menangani klik pada ukuran produk
   function handleSizeClick(size) {
     if (activeSize === size) {
       setQuantity((prevQuantity) => prevQuantity + 1);
@@ -35,28 +54,11 @@ export default function Detail(props) {
       if (isConfirmed) {
         setQuantity(1);
         setActiveSize(size);
-        setLastSelectedSize(size);
       }
     }
   }
 
-  function getUkuran(size) {
-    switch (size) {
-      case 'S':
-        return { width: '47', length: '70' };
-      case 'M':
-        return { width: '50', length: '72' };
-      case 'L':
-        return { width: '53', length: '75' };
-      case 'XL':
-        return { width: '60', length: '80' };
-      case 'XXL':
-        return { width: '66', length: '84' };
-      default:
-        return { width: '', length: '' };
-    }
-  }
-
+  // Fungsi untuk menambahkan produk ke keranjang belanja
   function tambahKeKeranjang() {
     if (quantity === 0) {
       alert('Silakan pilih ukuran dan jumlah produk terlebih dahulu.');
@@ -68,25 +70,24 @@ export default function Detail(props) {
     alert('Berhasil menambahkan ke keranjang!');
   }
 
+  // Fungsi untuk menambahkan jumlah produk
   function incrementQuantity() {
     setQuantity((prevQuantity) => prevQuantity + 1);
   }
 
+  // Fungsi untuk mengurangi jumlah produk
   function decrementQuantity() {
     setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 0));
   }
 
+  // Mendapatkan parameter URL dari React Router
   const { text } = useParams();
-
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const selectedImage = queryParams.get('image');
 
   useEffect(() => {
-    getProducts();
-  }, []);
-
-  useEffect(() => {
+    // Cari produk terpilih berdasarkan parameter URL
     const selectedProduct = products.find((product) => product.text === text);
     setSelectedProduct(selectedProduct);
 
@@ -95,16 +96,28 @@ export default function Detail(props) {
     } else if (selectedProduct) {
       setFrontImage(selectedProduct.image);
     }
+
+    // Update state ukuran dengan ukuran-ukuran unik dari produk terpilih
+    if (selectedProduct && selectedProduct.sizes) {
+      const uniqueSizes = Array.from(new Set(selectedProduct.sizes.map((size) => size.size)));
+      setSizes(uniqueSizes);
+    }
   }, [products, text, selectedImage]);
 
+  // Fungsi untuk mengubah gambar depan produk
   const changeFrontImage = (imageUrl) => {
     setFrontImage(imageUrl);
   };
 
+  // Daftar sumber gambar produk untuk ProductDetail
   const imageSources = selectedProduct ? [selectedProduct.image, selectedProduct.image_back] : [];
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   if (!selectedProduct) {
-    return null;
+    return <div>Produk tidak ditemukan.</div>;
   }
 
   return (
@@ -126,8 +139,9 @@ export default function Detail(props) {
             {/* Bagian Warna */}
             <h2 className='text-xl font-bold mb-2'>Warna</h2>
             <div
-              className='w-7 h-7 mb-2 cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
+              className='w-7 h-7 rounded mb-2 hover:scale-150 transition-transform duration-200 ease-out hover:ease-in'
               style={{ backgroundColor: `#${selectedProduct.color}` }}
+              onClick={() => handleSizeClick(size)}
             ></div>
 
             {/* Bagian Harga */}
@@ -136,10 +150,10 @@ export default function Detail(props) {
 
             {/* Bagian Ukuran */}
             <h2 className='text-xl font-bold mb-2'>Ukuran</h2>
-            <div className='flex flex-wrap space-x-2 mb-4'>
+            <div>
               {sizes.map((size) => (
                 <p key={size} className='text-gray-600 mb-4' onClick={() => handleSizeClick(size)}>
-                  {`Size ${size}: Width - ${getUkuran(size).width}, Length - ${getUkuran(size).length}`}
+                  {`Size ${size} : Lebar - ${getUkuran(size).width}cm, Panjang - ${getUkuran(size).length}cm`}
                 </p>
               ))}
             </div>
@@ -172,7 +186,7 @@ export default function Detail(props) {
               </div>
             </div>
 
-            {/* Button Tambah Keranjang */}
+            {/* Button Tambah Ke Keranjang */}
             <button
               onClick={tambahKeKeranjang}
               className='text-black px-4 py-2 mb-4 rounded-md hover:bg-black hover:text-white border border-black transition duration-100'
