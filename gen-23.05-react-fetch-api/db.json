@@ -8,6 +8,13 @@
       "image_back": "/images/CSTL_BACK.jpg",
       "category": "Tshirt",
       "color": "D9DDE8",
+      "sizes": [
+        { "size": "S", "width": "47", "length": "70" },
+        { "size": "M", "width": "50", "length": "72" },
+        { "size": "L", "width": "53", "length": "75" },
+        { "size": "XL", "width": "60", "length": "80" },
+        { "size": "XXL", "width": "66", "length": "84" }
+      ],
       "description": "T-Shirt CSTL - Et pariatur anim nostrud occaecat minim pariatur incididunt qui dolore. Minim ipsum enim irure irure ullamco irure. Tempor veniam ea commodo aliquip velit adipisicing dolor reprehenderit voluptate irure reprehenderit proident consequat occaecat. Occaecat ex id nisi velit aliqua dolore eu anim."
     },
     {
@@ -18,6 +25,13 @@
       "image_back": "/images/FLGG_BACK.jpg",
       "category": "Tshirt",
       "color": "1D1B20",
+      "sizes": [
+        { "size": "S", "width": "47", "length": "70" },
+        { "size": "M", "width": "50", "length": "72" },
+        { "size": "L", "width": "53", "length": "75" },
+        { "size": "XL", "width": "60", "length": "80" },
+        { "size": "XXL", "width": "66", "length": "84" }
+      ],
       "description": "T-Shirt FLGG - Et pariatur anim nostrud occaecat minim pariatur incididunt qui dolore. Minim ipsum enim irure irure ullamco irure. Tempor veniam ea commodo aliquip velit adipisicing dolor reprehenderit voluptate irure reprehenderit proident consequat occaecat. Occaecat ex id nisi velit aliqua dolore eu anim."
 
     },
@@ -29,6 +43,13 @@
       "image_back": "/images/KAAP_BACK.jpg",
       "category": "Shirt",
       "color": "35363B",
+      "sizes": [
+        { "size": "S", "width": "47", "length": "70" },
+        { "size": "M", "width": "50", "length": "72" },
+        { "size": "L", "width": "53", "length": "75" },
+        { "size": "XL", "width": "60", "length": "80" },
+        { "size": "XXL", "width": "66", "length": "84" }
+      ],
       "description": "Shirt KAAP - Et pariatur anim nostrud occaecat minim pariatur incididunt qui dolore. Minim ipsum enim irure irure ullamco irure. Tempor veniam ea commodo aliquip velit adipisicing dolor reprehenderit voluptate irure reprehenderit proident consequat occaecat. Occaecat ex id nisi velit aliqua dolore eu anim."
 
     },
@@ -40,6 +61,13 @@
       "image_back": "/images/MEET_BACK.jpg",
       "category": "Tshirt",
       "color": "375DB0",
+      "sizes": [
+        { "size": "S", "width": "47", "length": "70" },
+        { "size": "M", "width": "50", "length": "72" },
+        { "size": "L", "width": "53", "length": "75" },
+        { "size": "XL", "width": "60", "length": "80" },
+        { "size": "XXL", "width": "66", "length": "84" }
+      ],
       "description": "T-Shirt MEET - Et pariatur anim nostrud occaecat minim pariatur incididunt qui dolore. Minim ipsum enim irure irure ullamco irure. Tempor veniam ea commodo aliquip velit adipisicing dolor reprehenderit voluptate irure reprehenderit proident consequat occaecat. Occaecat ex id nisi velit aliqua dolore eu anim."
 
     },
@@ -51,6 +79,13 @@
       "image_back": "/images/MODU_BACK.jpg",
       "category": "Hoodie",
       "color": "222226",
+      "sizes": [
+        { "size": "S", "width": "47", "length": "70" },
+        { "size": "M", "width": "50", "length": "72" },
+        { "size": "L", "width": "53", "length": "75" },
+        { "size": "XL", "width": "60", "length": "80" },
+        { "size": "XXL", "width": "66", "length": "84" }
+      ],
       "description": "Hoodie MODU - Et pariatur anim nostrud occaecat minim pariatur incididunt qui dolore. Minim ipsum enim irure irure ullamco irure. Tempor veniam ea commodo aliquip velit adipisicing dolor reprehenderit voluptate irure reprehenderit proident consequat occaecat. Occaecat ex id nisi velit aliqua dolore eu anim."
 
     },
@@ -62,6 +97,13 @@
       "image_back": "/images/WWOD_BACK.jpg",
       "category": "Jacket",
       "color": "416D60",
+      "sizes": [
+        { "size": "S", "width": "47", "length": "70" },
+        { "size": "M", "width": "50", "length": "72" },
+        { "size": "L", "width": "53", "length": "75" },
+        { "size": "XL", "width": "60", "length": "80" },
+        { "size": "XXL", "width": "66", "length": "84" }
+      ],
       "description": "Jacket WWOD - Et pariatur anim nostrud occaecat minim pariatur incididunt qui dolore. Minim ipsum enim irure irure ullamco irure. Tempor veniam ea commodo aliquip velit adipisicing dolor reprehenderit voluptate irure reprehenderit proident consequat occaecat. Occaecat ex id nisi velit aliqua dolore eu anim."
 
     },
@@ -73,6 +115,13 @@
       "image_back": "/images/YOTT_BACK.jpg",
       "category": "Hoodie",
       "color": "262626",
+      "sizes": [
+        { "size": "S", "width": "47", "length": "70" },
+        { "size": "M", "width": "50", "length": "72" },
+        { "size": "L", "width": "53", "length": "75" },
+        { "size": "XL", "width": "60", "length": "80" },
+        { "size": "XXL", "width": "66", "length": "84" }
+      ],
       "description": "Hoodie YOTT - Et pariatur anim nostrud occaecat minim pariatur incididunt qui dolore. Minim ipsum enim irure irure ullamco irure. Tempor veniam ea commodo aliquip velit adipisicing dolor reprehenderit voluptate irure reprehenderit proident consequat occaecat. Occaecat ex id nisi velit aliqua dolore eu anim."
 
     }

@@ -8,7 +8,7 @@ import { Outlet, useParams, useLocation } from 'react-router-dom';
 export default function Detail(props) {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState({});
-  const [frontImage, setFrontImage] = useState(''); // Gambar utama produk yang akan ditampilkan
+  const [frontImage, setFrontImage] = useState('');
   const [activeSize, setActiveSize] = useState('');
   const [quantity, setQuantity] = useState(0);
 
@@ -26,10 +26,6 @@ export default function Detail(props) {
   useEffect(() => {
     getProducts();
   }, []);
-
-  function handleSizeClick(size) {
-    setActiveSize((prevSize) => (prevSize === size ? null : size));
-  }
 
   function handleSizeClick(size) {
     if (activeSize === size) {
@@ -62,7 +58,13 @@ export default function Detail(props) {
   }
 
   function tambahKeKeranjang() {
+    if (quantity === 0) {
+      alert('Silakan pilih ukuran dan jumlah produk terlebih dahulu.');
+      return;
+    }
+    setActiveSize('');
     setQuantity(0);
+
     alert('Berhasil menambahkan ke keranjang!');
   }
 
@@ -88,26 +90,20 @@ export default function Detail(props) {
     const selectedProduct = products.find((product) => product.text === text);
     setSelectedProduct(selectedProduct);
 
-    // Gunakan useEffect untuk mengatur frontImage ketika komponen pertama kali dimuat.
     if (selectedImage) {
-      // Jika ada selectedImage dari URL (gambar yang diklik), gunakan nilai itu.
       setFrontImage(selectedImage);
     } else if (selectedProduct) {
-      // Jika tidak ada selectedImage, gunakan selectedProduct.image.
       setFrontImage(selectedProduct.image);
     }
   }, [products, text, selectedImage]);
 
-  // Fungsi untuk mengganti gambar frontImage dengan gambar yang di klik
   const changeFrontImage = (imageUrl) => {
     setFrontImage(imageUrl);
   };
 
-  // Menggabungkan selectedProduct.image dan selectedProduct.image_back menjadi satu array
   const imageSources = selectedProduct ? [selectedProduct.image, selectedProduct.image_back] : [];
 
   if (!selectedProduct) {
-    // Jika produk yang dipilih tidak ditemukan, kembalikan nilai null atau tampilkan pesan loading.
     return null;
   }
 
@@ -130,8 +126,8 @@ export default function Detail(props) {
             {/* Bagian Warna */}
             <h2 className='text-xl font-bold mb-2'>Warna</h2>
             <div
-              className='w-7 h-7 bg-blue-500 mb-2 cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
-              style={{ backgroundColor: `${selectedProduct.color}` }}
+              className='w-7 h-7 mb-2 cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out'
+              style={{ backgroundColor: `#${selectedProduct.color}` }}
             ></div>
 
             {/* Bagian Harga */}

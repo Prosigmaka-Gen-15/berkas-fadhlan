@@ -14,15 +14,20 @@ export default function Home(props) {
     { text: 'Hoodie', link: '/' },
   ];
 
-  const products = [
-    { text: 'CSTL', image: '/images/CSTL.jpg', price: 'Rp 78.000' },
-    { text: 'FLGG', image: '/images/FLGG.jpg', price: 'Rp 78.000' },
-    { text: 'KAAP', image: '/images/KAAP.jpg', price: 'Rp 115.000' },
-    { text: 'MEET', image: '/images/MEET.jpg', price: 'Rp 78.000' },
-    { text: 'MODU', image: '/images/MODU.jpg', price: 'Rp 158.500' },
-    { text: 'WWOD', image: '/images/WWOD.jpg', price: 'Rp 149.000' },
-    { text: 'YOTT', image: '/images/YOTT.jpg', price: 'Rp 158.500' },
-  ];
+  const [products, setProducts] = useState([]);
+
+  const getProducts = async () => {
+    try {
+      let response = await axios.get('http://localhost:3001/products');
+      setProducts(response.data);
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   return (
     <>
