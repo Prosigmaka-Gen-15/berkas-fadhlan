@@ -7,13 +7,6 @@ import Menu from '../contents/Menu';
 import Product from '../contents/Product';
 
 export default function Home(props) {
-  const menuItems = [
-    { text: 'T-Shirt', link: '/' },
-    { text: 'Shirt', link: '/' },
-    { text: 'Jacket', link: '/' },
-    { text: 'Hoodie', link: '/' },
-  ];
-
   const [products, setProducts] = useState([]);
 
   const getProducts = async () => {
@@ -35,7 +28,7 @@ export default function Home(props) {
       <Header registerText='Daftar' loginText='Masuk' />
 
       {/* Menu */}
-      <Menu menuItems={menuItems} />
+      <Menu />
 
       {/* banner */}
       <div className='flex flex-wrap justify-center'>

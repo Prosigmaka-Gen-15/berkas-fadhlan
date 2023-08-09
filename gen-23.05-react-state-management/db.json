@@ -1,4 +1,11 @@
 {
+  "categories": [
+    { "id": 1, "name": "T-Shirt" },
+    { "id": 2, "name": "Shirt" },
+    { "id": 3, "name": "Jacket" },
+    { "id": 4, "name": "Hoodie" },
+    { "id": 5, "name": "Sweater" }
+  ],
   "products": [
     {
       "id": 1,

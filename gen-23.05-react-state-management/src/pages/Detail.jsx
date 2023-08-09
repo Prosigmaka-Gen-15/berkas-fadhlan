@@ -5,7 +5,7 @@ import Footer from '../layouts/Footer';
 import ProductDetail from '../contents/ProductDetail';
 import { Outlet, useParams, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../redux/cartAction';
+import { addToCart } from '../redux/cartSlice';
 
 export default function Detail(props) {
   // State untuk menyimpan data produk, produk terpilih, gambar depan, ukuran aktif, jumlah, dan status loading
@@ -53,6 +53,13 @@ export default function Detail(props) {
 
   // Fungsi untuk menangani klik pada ukuran produk
   function handleSizeClick(size) {
+    if (!isSizeSelected) {
+      setActiveSize(size);
+      setIsSizeSelected(true);
+      setQuantity(1); // Set quantity menjadi 1 saat ukuran pertama kali dipilih
+      return;
+    }
+
     if (activeSize === size) {
       setQuantity((prevQuantity) => prevQuantity + 1);
     } else {
@@ -60,7 +67,7 @@ export default function Detail(props) {
       if (isConfirmed) {
         setQuantity(1);
         setActiveSize(size);
-        setIsSizeSelected(true); // Set isSizeSelected menjadi true ketika ukuran dipilih
+        setIsSizeSelected(true);
       }
     }
   }
@@ -78,7 +85,7 @@ export default function Detail(props) {
     }
 
     // Dispatch the action to add to cart
-    dispatch(addToCart(selectedProduct, quantity, activeSize));
+    dispatch(addToCart({ product: selectedProduct, quantity, size: activeSize }));
 
     setActiveSize('');
     setQuantity(0);
@@ -209,11 +216,11 @@ export default function Detail(props) {
             <button
               onClick={tambahKeKeranjang}
               className={`text-black px-4 py-2 mb-4 rounded-md ${
-                isSizeSelected
+                isSizeSelected && activeSize
                   ? 'hover:bg-black hover:text-white border border-black transition duration-100'
                   : 'bg-gray-300 text-gray-600 cursor-not-allowed'
               }`}
-              disabled={!isSizeSelected} // Menonaktifkan tombol jika ukuran belum dipilih
+              disabled={!isSizeSelected || !activeSize}
             >
               Tambah ke Keranjang
             </button>
