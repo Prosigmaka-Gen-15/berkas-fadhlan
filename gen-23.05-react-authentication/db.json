@@ -1,0 +1,449 @@
+{
+  "users": [
+    {
+      "name": "Admin",
+      "email": "admin@mail.com",
+      "password": "admin123",
+      "id": 1,
+      "role": "admin"
+    },
+    {
+      "name": "User",
+      "email": "user@mail.com",
+      "password": "user123",
+      "id": 2,
+      "role": "user"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "T-Shirt"
+    },
+    {
+      "id": 2,
+      "name": "Shirt"
+    },
+    {
+      "id": 3,
+      "name": "Jacket"
+    },
+    {
+      "id": 4,
+      "name": "Hoodie"
+    },
+    {
+      "id": 5,
+      "name": "Sweater"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "CSTL",
+      "price": "78000",
+      "image": "/images/CSTL.jpg",
+      "image_back": "/images/CSTL_BACK.jpg",
+      "category": "Tshirt",
+      "color": "D9DDE8",
+      "sizes": [
+        {
+          "size": "S",
+          "width": "47",
+          "length": "70"
+        },
+        {
+          "size": "M",
+          "width": "50",
+          "length": "72"
+        },
+        {
+          "size": "L",
+          "width": "53",
+          "length": "75"
+        },
+        {
+          "size": "XL",
+          "width": "60",
+          "length": "80"
+        },
+        {
+          "size": "XXL",
+          "width": "66",
+          "length": "84"
+        }
+      ],
+      "description": "T-Shirt CSTL"
+    },
+    {
+      "id": 2,
+      "name": "FLGG",
+      "price": "78000",
+      "image": "/images/FLGG.jpg",
+      "image_back": "/images/FLGG_BACK.jpg",
+      "category": "Tshirt",
+      "color": "1D1B20",
+      "sizes": [
+        {
+          "size": "S",
+          "width": "47",
+          "length": "70"
+        },
+        {
+          "size": "M",
+          "width": "50",
+          "length": "72"
+        },
+        {
+          "size": "L",
+          "width": "53",
+          "length": "75"
+        },
+        {
+          "size": "XL",
+          "width": "60",
+          "length": "80"
+        },
+        {
+          "size": "XXL",
+          "width": "66",
+          "length": "84"
+        }
+      ],
+      "description": "T-Shirt FLGG"
+    },
+    {
+      "id": 3,
+      "name": "KAAP",
+      "price": "115000",
+      "image": "/images/KAAP.jpg",
+      "image_back": "/images/KAAP_BACK.jpg",
+      "category": "Shirt",
+      "color": "35363B",
+      "sizes": [
+        {
+          "size": "S",
+          "width": "47",
+          "length": "70"
+        },
+        {
+          "size": "M",
+          "width": "50",
+          "length": "72"
+        },
+        {
+          "size": "L",
+          "width": "53",
+          "length": "75"
+        },
+        {
+          "size": "XL",
+          "width": "60",
+          "length": "80"
+        },
+        {
+          "size": "XXL",
+          "width": "66",
+          "length": "84"
+        }
+      ],
+      "description": "Shirt KAAP"
+    },
+    {
+      "id": 4,
+      "name": "MEET",
+      "price": "78000",
+      "image": "/images/MEET.jpg",
+      "image_back": "/images/MEET_BACK.jpg",
+      "category": "Tshirt",
+      "color": "375DB0",
+      "sizes": [
+        {
+          "size": "S",
+          "width": "47",
+          "length": "70"
+        },
+        {
+          "size": "M",
+          "width": "50",
+          "length": "72"
+        },
+        {
+          "size": "L",
+          "width": "53",
+          "length": "75"
+        },
+        {
+          "size": "XL",
+          "width": "60",
+          "length": "80"
+        },
+        {
+          "size": "XXL",
+          "width": "66",
+          "length": "84"
+        }
+      ],
+      "description": "T-Shirt MEET"
+    },
+    {
+      "id": 5,
+      "name": "MODU",
+      "price": "158500",
+      "image": "/images/MODU.jpg",
+      "image_back": "/images/MODU_BACK.jpg",
+      "category": "Hoodie",
+      "color": "222226",
+      "sizes": [
+        {
+          "size": "S",
+          "width": "47",
+          "length": "70"
+        },
+        {
+          "size": "M",
+          "width": "50",
+          "length": "72"
+        },
+        {
+          "size": "L",
+          "width": "53",
+          "length": "75"
+        },
+        {
+          "size": "XL",
+          "width": "60",
+          "length": "80"
+        },
+        {
+          "size": "XXL",
+          "width": "66",
+          "length": "84"
+        }
+      ],
+      "description": "Hoodie MODU"
+    },
+    {
+      "id": 6,
+      "name": "WWOD",
+      "price": "149000",
+      "image": "/images/WWOD.jpg",
+      "image_back": "/images/WWOD_BACK.jpg",
+      "category": "Jacket",
+      "color": "416D60",
+      "sizes": [
+        {
+          "size": "S",
+          "width": "47",
+          "length": "70"
+        },
+        {
+          "size": "M",
+          "width": "50",
+          "length": "72"
+        },
+        {
+          "size": "L",
+          "width": "53",
+          "length": "75"
+        },
+        {
+          "size": "XL",
+          "width": "60",
+          "length": "80"
+        },
+        {
+          "size": "XXL",
+          "width": "66",
+          "length": "84"
+        }
+      ],
+      "description": "Jacket WWOD"
+    },
+    {
+      "id": 7,
+      "name": "YOTT",
+      "price": "158000",
+      "image": "/images/YOTT.jpg",
+      "image_back": "/images/YOTT_BACK.jpg",
+      "category": "Hoodie",
+      "color": "262626",
+      "sizes": [
+        {
+          "size": "S",
+          "width": "47",
+          "length": "70"
+        },
+        {
+          "size": "M",
+          "width": "50",
+          "length": "72"
+        },
+        {
+          "size": "L",
+          "width": "53",
+          "length": "75"
+        },
+        {
+          "size": "XL",
+          "width": "60",
+          "length": "80"
+        },
+        {
+          "size": "XXL",
+          "width": "66",
+          "length": "84"
+        }
+      ],
+      "description": "Hoodie YOTT"
+    },
+    {
+      "description": "T-Shirt NANO",
+      "sizes": [
+        {
+          "length": 70,
+          "width": 47,
+          "size": "S"
+        },
+        {
+          "length": 72,
+          "width": 50,
+          "size": "M"
+        },
+        {
+          "length": 75,
+          "width": 53,
+          "size": "L"
+        },
+        {
+          "length": 80,
+          "width": 60,
+          "size": "XL"
+        },
+        {
+          "length": 84,
+          "width": 66,
+          "size": "XXL"
+        }
+      ],
+      "color": "FBFAFE",
+      "category": "Tshirt",
+      "image_back": "https://sellercenter.unkl-ns.com/gallery/items/764/img_764_i56_4_1690802110.jpg",
+      "image": "https://sellercenter.unkl-ns.com/gallery/items/764/img_764_i56_3_1690802107.jpg",
+      "price": 78000,
+      "name": "NANO",
+      "id": 8
+    },
+    {
+      "description": "Full Print",
+      "sizes": [
+        {
+          "length": 70,
+          "width": 47,
+          "size": "S"
+        },
+        {
+          "length": 72,
+          "width": 50,
+          "size": "M"
+        },
+        {
+          "length": 75,
+          "width": 53,
+          "size": "L"
+        },
+        {
+          "length": 80,
+          "width": 60,
+          "size": "XL"
+        },
+        {
+          "length": 84,
+          "width": 66,
+          "size": "XXL"
+        }
+      ],
+      "color": "",
+      "category": "Sweater",
+      "image_back": "https://sellercenter.unkl-ns.com/gallery/items/737/img_737_i175_4_1686370484.jpg",
+      "image": "https://sellercenter.unkl-ns.com/gallery/items/737/img_737_i175_3_1686370481.jpg",
+      "price": 600000,
+      "name": "XINS",
+      "id": 9
+    },
+    {
+      "description": "T-Shirt CAAL",
+      "sizes": [
+        {
+          "length": 70,
+          "width": 47,
+          "size": "S"
+        },
+        {
+          "length": 72,
+          "width": 50,
+          "size": "M"
+        },
+        {
+          "length": 75,
+          "width": 53,
+          "size": "L"
+        },
+        {
+          "length": 80,
+          "width": 60,
+          "size": "XL"
+        },
+        {
+          "length": 84,
+          "width": 66,
+          "size": "XXL"
+        }
+      ],
+      "color": "25BB7B",
+      "category": "Tshirt",
+      "image_back": "https://sellercenter.unkl-ns.com/gallery/items/767/img_767_i61_4_1690802496.jpg",
+      "image": "https://sellercenter.unkl-ns.com/gallery/items/767/img_767_i61_3_1690802492.jpg",
+      "price": 78000,
+      "name": "CAAL",
+      "id": 10
+    },
+    {
+      "description": "Jacket Harrington ZOPP",
+      "sizes": [
+        {
+          "length": 70,
+          "width": 47,
+          "size": "S"
+        },
+        {
+          "length": 72,
+          "width": 50,
+          "size": "M"
+        },
+        {
+          "length": 75,
+          "width": 53,
+          "size": "L"
+        },
+        {
+          "length": 80,
+          "width": 60,
+          "size": "XL"
+        },
+        {
+          "length": 84,
+          "width": 66,
+          "size": "XXL"
+        }
+      ],
+      "color": "C4AB9D",
+      "category": "Jacket",
+      "image_back": "https://sellercenter.unkl-ns.com/gallery/items/760/img_760_i62_4_1689321922.jpg",
+      "image": "https://sellercenter.unkl-ns.com/gallery/items/760/img_760_i62_3_1689321919.jpg",
+      "price": 168000,
+      "name": "ZOPP",
+      "id": 11
+    }
+  ]
+}
