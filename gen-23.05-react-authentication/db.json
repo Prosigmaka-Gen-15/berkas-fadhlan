@@ -1,18 +1,11 @@
 {
   "users": [
     {
-      "name": "Admin",
       "email": "admin@mail.com",
-      "password": "admin123",
-      "id": 1,
-      "role": "admin"
-    },
-    {
-      "name": "User",
-      "email": "user@mail.com",
-      "password": "user123",
-      "id": 2,
-      "role": "user"
+      "password": "$2a$10$EVb3P4/zKzQmUf1PcBdjF./fRDpjmOsc5tLKbjrECLvARgawDzKL2",
+      "name": "Admin",
+      "role": "admin",
+      "id": 1
     }
   ],
   "categories": [

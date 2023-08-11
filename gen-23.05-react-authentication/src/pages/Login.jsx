@@ -33,23 +33,25 @@ export default function Login() {
     event.preventDefault();
 
     try {
-      const response = await axios.get('http://localhost:3001/users');
+      const response = await axios.post('http://localhost:3001/login', { email, password });
       const users = response.data;
 
-      const user = users.find((user) => user.email === email && user.password === password);
+      console.log(response.data)
 
-      if (user) {
-        console.log('Login berhasil');
-        localStorage.setItem('user', JSON.stringify(user));
+      // const user = users.find((user) => user.email === email && user.password === password);
 
-        if (user.role === 'admin') {
-          navigate('/admin');
-        } else {
-          navigate('/');
-        }
-      } else {
-        setErrorMessage('Login gagal. Periksa email dan password Anda.');
-      }
+      // if (user) {
+      //   console.log('Login berhasil');
+      //   localStorage.setItem('user', JSON.stringify(user));
+
+      //   if (user.role === 'admin') {
+      //     navigate('/admin');
+      //   } else {
+      //     navigate('/');
+      //   }
+      // } else {
+      //   setErrorMessage('Login gagal. Periksa email dan password Anda.');
+      // }
     } catch (error) {
       console.error('Error:', error);
       setErrorMessage('Terjadi kesalahan saat melakukan login. Silakan coba lagi.');
