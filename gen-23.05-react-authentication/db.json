@@ -1,18 +1,16 @@
 {
   "users": [
     {
-      "name": "Admin",
       "email": "admin@mail.com",
-      "password": "admin123",
-      "id": 1,
-      "role": "admin"
+      "password": "$2a$10$MwPFR0l9GLMSoyinko0iPOAV/EJldURD3X3m/hHkskjnDxMMSVPnK",
+      "username": "Admin",
+      "id": 1
     },
     {
-      "name": "User",
       "email": "user@mail.com",
-      "password": "user123",
-      "id": 2,
-      "role": "user"
+      "password": "$2a$10$hzO1Amt0/5mqroya7Csse.Hs3RfqFg.0ZchPWeH2u.G01EYdfYnSC",
+      "username": "User 1",
+      "id": 2
     }
   ],
   "categories": [

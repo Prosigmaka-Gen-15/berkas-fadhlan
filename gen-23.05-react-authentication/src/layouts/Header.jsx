@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import { logoutUser } from '../redux/authActions';
+import { resetAuthData } from '../redux/authSlice';
 
 export default function Header(props) {
   const dispatch = useDispatch();
@@ -14,8 +14,7 @@ export default function Header(props) {
   const [showLogoutMenu, setShowLogoutMenu] = useState(false);
 
   const handleLogout = () => {
-    dispatch(logoutUser());
-    localStorage.removeItem('user');
+    dispatch(resetAuthData());
     navigate('/');
   };
 
@@ -24,6 +23,7 @@ export default function Header(props) {
   };
 
   const isAdmin = storedUser && storedUser.role === 'admin';
+  const isLoggedIn = useSelector((state) => state.auth.token !== '');
 
   return (
     <div className='nav-links bg-gray-300 gap-x-2 fixed top-0 w-full h-10 flex justify-between items-center'>
@@ -71,19 +71,19 @@ export default function Header(props) {
             )}
           </div>
         </Link>
-        {storedUser ? (
-          <div className='flex items-center'>
-            <span className='px-4 py-1 cursor-pointer' onClick={handleToggleLogoutMenu}>
-              {storedUser.name}
-            </span>
+        {isLoggedIn ? (
+          <div className='relative'>
+            <div
+              onClick={handleToggleLogoutMenu}
+              className='px-4 py-1 rounded-md text-black hover:text-white transition duration-200 hover:bg-gray-800 duration-200 ease-in cursor-pointer'
+            >
+              {storedUser.username}
+            </div>
             {showLogoutMenu && (
-              <div className='absolute top-10 right-0 bg-white border rounded shadow-md p-2'>
-                <button
-                  className='block px-4 py-1 text-black hover:text-white transition duration-200 hover:bg-gray-800 duration-200 ease-in'
-                  onClick={handleLogout}
-                >
+              <div className='absolute top-8 right-0 bg-white shadow-md py-2 px-4 rounded-md'>
+                <div onClick={handleLogout} className='cursor-pointer'>
                   Logout
-                </button>
+                </div>
               </div>
             )}
           </div>
@@ -92,7 +92,7 @@ export default function Header(props) {
             to={'/login'}
             className='px-4 py-1 rounded-md text-black hover:text-white transition duration-200 hover:bg-gray-800 duration-200 ease-in'
           >
-            {props.loginText}
+            Masuk
           </Link>
         )}
       </div>
