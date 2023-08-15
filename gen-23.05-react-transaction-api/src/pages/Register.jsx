@@ -14,15 +14,6 @@ export default function Register() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (errorMessage) {
-      setTimeout(() => {
-        alert(errorMessage);
-        navigate('/login');
-      }, 3000);
-    }
-  }, [errorMessage, navigate]);
-
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
@@ -39,14 +30,13 @@ export default function Register() {
     event.preventDefault();
 
     const userData = {
-      name: name,
       email: email,
       password: password,
-      role: 'user', // Add the role here
+      username: name,
     };
 
     try {
-      const response = await axios.post('http://localhost:3001/users', userData);
+      const response = await axios.post('http://localhost:3001/register', userData);
       console.log('Response:', response.data);
 
       navigate('/login');
