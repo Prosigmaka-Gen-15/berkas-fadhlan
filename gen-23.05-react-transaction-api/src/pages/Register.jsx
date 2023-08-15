@@ -33,6 +33,7 @@ export default function Register() {
       email: email,
       password: password,
       username: name,
+      role: 'user',
     };
 
     try {

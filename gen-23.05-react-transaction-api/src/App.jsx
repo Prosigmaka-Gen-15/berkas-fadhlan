@@ -20,6 +20,8 @@ import CheckoutPage from './pages/CheckoutPage';
 import OverviewPopup from './pages/OverviewPopup';
 import AdminShowTransaction from './pages/AdminShowTransaction';
 import TransactionDetailsPage from './pages/TransactionDetailsPage';
+import AdminShowAccount from './pages/AdminShowAccount';
+import AdminEditAccount from './pages/AdminEditAccount';
 
 export default function App() {
   return (
@@ -37,6 +39,9 @@ export default function App() {
             </Route>
             <Route element={<ProtectedRoute />}>
               <Route path='/admin/' element={<Admin />} />
+              <Route path='/showAccount' element={<AdminShowAccount />} />
+              <Route path='/editAccount/:id' element={<AdminEditAccount />} />
+
               <Route path='/showProduct' element={<ShowProduct />} />
               <Route path='/formProduct' element={<FormProduct />} />
               <Route path='/editProduct/:id' element={<AdminEditProduct />} />

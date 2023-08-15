@@ -1,112 +1,21 @@
 {
   "users": [
     {
-      "email": "admin@mail.com",
-      "password": "$2a$10$MwPFR0l9GLMSoyinko0iPOAV/EJldURD3X3m/hHkskjnDxMMSVPnK",
-      "username": "Admin",
-      "id": 1
-    },
-    {
-      "email": "user@mail.com",
-      "password": "$2a$10$hzO1Amt0/5mqroya7Csse.Hs3RfqFg.0ZchPWeH2u.G01EYdfYnSC",
+      "email": "user1@mail.com",
+      "password": "$2a$10$Y3JwCpUljnF7N6SzB/x1DuBogAeULI4R6yEzuOvleWpJpI65D/1q.",
       "username": "User 1",
+      "role": "user",
       "id": 2
     },
     {
-      "email": "fadhlan@mail.com",
-      "password": "$2a$10$Xq4ifOMsrEW3TgS.LPn5bO1TJYEBUV3vZaHz6BZ1ajgzyvDqDjq5S",
-      "username": "Fadhlan",
+      "email": "admin1@mail.com",
+      "password": "$2a$10$ubmBt0/.j6EVf/Z1IeoYsemISq1NtnGlvLYtU5p8349Jnzd6E9n2y",
+      "username": "Admin 1",
+      "role": "admin",
       "id": 3
     }
   ],
-  "transactions": [
-    {
-      "total": 171600,
-      "user_id": 1,
-      "created_at": "2023-08-15T05:11:28.261Z",
-      "payment_method": "creditCard",
-      "delivery_method": "standard",
-      "address": "Sukabumi",
-      "transaction_details": [
-        {
-          "product_id": 4,
-          "size": "XXL",
-          "quantity": 2,
-          "subtotal": 156000
-        }
-      ],
-      "id": 1
-    },
-    {
-      "total": 343200,
-      "user_id": 1,
-      "created_at": "2023-08-15T05:17:43.725Z",
-      "payment_method": "bankTransfer",
-      "delivery_method": "express",
-      "address": "Sukabumi Jawa Barat",
-      "transaction_details": [
-        {
-          "product_id": 4,
-          "size": "XXL",
-          "quantity": 1,
-          "subtotal": 78000
-        },
-        {
-          "product_id": 2,
-          "size": "XXL",
-          "quantity": 2,
-          "subtotal": 156000
-        },
-        {
-          "product_id": 8,
-          "size": "XXL",
-          "quantity": 1,
-          "subtotal": 78000
-        }
-      ],
-      "id": 2
-    },
-    {
-      "total": 496100,
-      "user_id": 2,
-      "created_at": "2023-08-15T05:25:07.285Z",
-      "payment_method": "creditCard",
-      "delivery_method": "standard",
-      "address": "Sleman",
-      "transaction_details": [
-        {
-          "product_id": 3,
-          "size": "XXL",
-          "quantity": 1,
-          "subtotal": 115000
-        },
-        {
-          "product_id": 11,
-          "size": "S",
-          "quantity": 2,
-          "subtotal": 336000
-        }
-      ],
-      "id": 3
-    },
-    {
-      "total": 85800,
-      "user_id": 3,
-      "created_at": "2023-08-15T05:35:27.877Z",
-      "payment_method": "bankTransfer",
-      "delivery_method": "courier",
-      "address": "Sukabumi",
-      "transaction_details": [
-        {
-          "product_id": 10,
-          "size": "XXL",
-          "quantity": 1,
-          "subtotal": 78000
-        }
-      ],
-      "id": 4
-    }
-  ],
+  "transactions": [],
   "transaction_details": [],
   "categories": [
     {
