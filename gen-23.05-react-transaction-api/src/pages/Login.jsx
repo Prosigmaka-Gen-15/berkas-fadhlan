@@ -16,6 +16,8 @@ export default function Login() {
     password: '',
   });
 
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+
   const setInputValue = (event) =>
     setFormData({
       ...formData,
@@ -39,6 +41,10 @@ export default function Login() {
       });
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
+
   return (
     <>
       {/* header */}
@@ -59,12 +65,17 @@ export default function Login() {
             </label>
             <div className='relative'>
               <input
-                type='password'
+                type={showPassword ? 'text' : 'password'} // Toggle input type based on showPassword state
                 name='password'
                 className='w-full border px-3 py-2 pr-10'
                 value={formData.password}
                 onChange={setInputValue}
                 required
+              />
+              <FontAwesomeIcon
+                icon={showPassword ? faEyeSlash : faEye}
+                className='absolute top-1/2 right-2 transform -translate-y-1/2 cursor-pointer'
+                onClick={togglePasswordVisibility}
               />
             </div>
           </div>
